@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+</head>
+<body>
+<div class="frog">
+
+    <!-- Header -->
+    <header>
+        {{> header }}
+    </header>
+
+    <main>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        {{> footer }}
+    </footer>
+</div>
+</body>
+</html>
