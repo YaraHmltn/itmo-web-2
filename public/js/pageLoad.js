@@ -1,17 +1,9 @@
-(function () {
-  let startTime = new Date().getTime();
-
-  function timer() {
-    topbar.show();
-    let element = document.getElementById('load-time');
-    element.innerHTML +=
-      'page loaded in ' +
-      (new Date().getTime() - startTime) / 1000 +
-      ' seconds';
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    timer();
-    topbar.hide();
-  });
+(() => {
+  window.onload = () => {
+    const timer = Math.round(performance.now());
+    const currentText = document.getElementById('time').innerHTML;
+    document.getElementById(
+      'time',
+    ).innerHTML = `Время загрузки страницы: ${timer} ms (клиент) ${currentText}`;
+  };
 })();
