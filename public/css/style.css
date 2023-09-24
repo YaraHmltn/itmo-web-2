@@ -1,0 +1,39 @@
+.logo {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.header {
+    color: darkgreen;
+    display: flex;
+}
+
+.menu {
+    color: darkgreen;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+}
+
+.menu li {
+    display: inline;
+    padding: 30px;
+}
+
+.menu a {
+    font-size: 20px;
+    color: darkgreen;
+    text-decoration: none;
+}
+
+.footer {
+    justify-content: center;
+}
+
+.tag {
+    color: darkgreen;
+}
+
