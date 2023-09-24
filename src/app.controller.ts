@@ -13,7 +13,7 @@ export class AppController {
     };
   }
 
-  @Get('main')
+  @Get('MyFrogs')
   @Render('MyFrogs.hbs')
   root() {
     return {
@@ -21,7 +21,7 @@ export class AppController {
     };
   }
 
-  @Get('main')
+  @Get('ExtinctFrogs')
   @Render('ExtinctFrogs.hbs')
   root() {
     return {
@@ -29,7 +29,7 @@ export class AppController {
     };
   }
 
-  @Get('main')
+  @Get('Profile')
   @Render('Profile.hbs')
   root() {
     return {
