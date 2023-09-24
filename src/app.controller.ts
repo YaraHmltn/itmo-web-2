@@ -13,7 +13,7 @@ export class AppController {
     };
   }
 
-  @Get('/MyFrogs')
+  @Get('MyFrogs')
   @Render('MyFrogs.hbs')
   MyFrogs() {
     return {
