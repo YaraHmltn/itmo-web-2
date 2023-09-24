@@ -3,8 +3,7 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {
-  }
+  constructor(private readonly appService: AppService) {}
 
   @Get('main')
   @Render('index.hbs')
@@ -15,24 +14,26 @@ export class AppController {
   }
 
   @Get('main')
+  @Render('MyFrogs.hbs')
+  root() {
+    return {
+      title: 'Мои лягушки',
+    };
+  }
+
+  @Get('main')
   @Render('ExtinctFrogs.hbs')
   root() {
     return {
       title: 'Вымершие',
+    };
+  }
 
-      @Get('main')
-        @Render('MyFrogs.hbs')
-      root() {
-        return {
-          title: 'Мои лягушки',
-
-          root: function() {
-            return {
-              title: "Профиль"
-            };
-          }
-        }
-      }
-    }
+  @Get('main')
+  @Render('Profile.hbs')
+  root() {
+    return {
+      title: 'Профиль',
+    };
   }
 }
