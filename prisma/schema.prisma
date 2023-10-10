@@ -18,7 +18,8 @@ model Frog {
 }
 
 model User {
-  id    Int    @id
-  name  String
-  email String @unique
+  id       Int    @id
+  name     String
+  email    String @unique
+  password String
 }

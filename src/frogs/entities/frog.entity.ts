@@ -11,7 +11,7 @@ export class FrogEntity {
     @ApiProperty({
         description: "name",
         type: String,
-        example: "Roma"
+        example: "Пиксель"
     })
     name: string;
 

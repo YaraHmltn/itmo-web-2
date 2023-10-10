@@ -6,7 +6,7 @@ export class CreateFrogDto {
     @ApiProperty({
         description: "name",
         type: String,
-        example: "Roma"
+        example: "Пиксель"
     })
     name: string;
 

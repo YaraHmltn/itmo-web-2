@@ -6,9 +6,17 @@
 
 <div class="page">
   <main>
-    <h1 id="name">Name</h1>
-    <h2 id="email">Email</h2>
-    <h2 id="website">Website</h2>
+      <h1>Профиль</h1>
+      <div class="profile">
+          <form onsubmit="onFormSubmit()">
+              <label for="name">Имя:</label><br>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Ярослава"><br>
+              <label for="email">Email:</label><br>
+              <input class="form-input"  type="text" id="email" name="email" placeholder="yarahmltn@gmail.com"><br>
+              <label for="password">Пароль:</label><br>
+              <input class="form-input"  type="text" id="password" name="password" placeholder="..."><br>
+          </form>
+      </div>
   </main>
 
   {{> footer}}

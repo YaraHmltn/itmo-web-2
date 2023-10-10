@@ -4,6 +4,9 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import * as hbs from 'hbs';
 import { AppModule } from './app.module';
+import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
+import {FrogsModule} from "./frogs/frogs.module";
+import {UsersModule} from "./users/users.module";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -21,8 +24,20 @@ async function bootstrap() {
   //return accum;
   //});
 
+  const config = new DocumentBuilder()
+      .setTitle('Yaroslava Vdovina: Frogs')
+      .setDescription('Frogs API description')
+      .setVersion('1.0')
+      .addTag('ITMO')
+      .build();
+  const document = SwaggerModule.createDocument(app, config, {
+    include: [FrogsModule, UsersModule],
+  });
+  SwaggerModule.setup('api', app, document);
+
   const port = app.get(ConfigService).get<number>('PORT') || 12345;
   await app.listen(port);
 }
 
 bootstrap();
+
