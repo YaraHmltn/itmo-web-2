@@ -11,13 +11,14 @@ datasource db {
 }
 
 model Frog {
-  id       Int        @id
-  name     String
-  age      Int
+  id      Int    @id
+  name    String
+  age     Int
+  variety String @unique
 }
 
 model User {
-  id       Int        @id
-  name     String
-  age      Int
+  id    Int    @id
+  name  String
+  email String @unique
 }
