@@ -6,9 +6,10 @@ import {UsersModule} from './users/users.module';
 import {FrogsModule} from './frogs/frogs.module';
 import {APP_FILTER} from "@nestjs/core";
 import { HttpExceptionFilter } from './http-exception.filter';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), UsersModule, FrogsModule],
+  imports: [ConfigModule.forRoot(), UsersModule, FrogsModule, AuthModule],
   controllers: [AppController],
   providers: [
     AppService

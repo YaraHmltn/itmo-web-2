@@ -29,15 +29,24 @@ export class UserEntity {
     })
     password: string;
 
+    @ApiProperty({
+        description: "false - common user; true - admin",
+        type: Boolean,
+        default: false
+    })
+    is_admin: boolean;
+
     constructor(
         id: number,
         name: string,
         email: string,
         password: string,
+        is_admin: boolean = false,
     ) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.is_admin = is_admin;
     }
 }

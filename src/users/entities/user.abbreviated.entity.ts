@@ -1,9 +1,16 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsEmail, IsNotEmpty, IsString } from "class-validator";
+import { IsBoolean, IsNumber, IsString } from "class-validator";
 
+export class UserAbbreviatedEntity {
+    @IsNumber()
+    @ApiProperty({
+        description: "unique identification number",
+        type: Number,
+        example: 1
+    })
+    id: number;
 
-export class CreateUserDto {
-    @IsNotEmpty()
+    @IsString()
     @ApiProperty({
         description: "name",
         type: String,
@@ -11,24 +18,15 @@ export class CreateUserDto {
     })
     name: string;
 
-    @IsEmail()
-    @IsNotEmpty()
+    @IsString()
     @ApiProperty({
         description: "email",
         type: String,
-        example: "yarahmltn@gmail.com"
+        example: "dyarahmltn@gmail.com"
     })
     email: string;
 
-    @IsNotEmpty()
-    @ApiProperty({
-        description: "password",
-        type: String,
-        example: "123456789"
-    })
-    password: string;
-
-    @IsNotEmpty()
+    @IsBoolean()
     @ApiProperty({
         description: "false - common user; true - admin",
         type: Boolean,
@@ -36,10 +34,16 @@ export class CreateUserDto {
     })
     is_admin: boolean;
 
-    constructor(name: string, email: string, password: string, is_admin: boolean) {
+
+    constructor(
+        id: number,
+        name: string,
+        email: string,
+        is_admin: boolean = false
+    ) {
+        this.id = id;
         this.name = name;
         this.email = email;
-        this.password = password;
         this.is_admin = is_admin;
     }
 }

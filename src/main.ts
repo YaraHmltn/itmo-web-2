@@ -7,6 +7,7 @@ import { AppModule } from './app.module';
 import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
 import {FrogsModule} from "./frogs/frogs.module";
 import {UsersModule} from "./users/users.module";
+import {AuthModule} from "./auth/auth.module";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -28,10 +29,12 @@ async function bootstrap() {
       .setTitle('Yaroslava Vdovina: Frogs')
       .setDescription('Frogs API description')
       .setVersion('1.0')
-      .addTag('ITMO')
+      .addTag("auth")
+      .addTag("users")
+      .addBearerAuth()
       .build();
   const document = SwaggerModule.createDocument(app, config, {
-    include: [FrogsModule, UsersModule],
+    include: [FrogsModule, UsersModule, AuthModule],
   });
   SwaggerModule.setup('api', app, document);
 
